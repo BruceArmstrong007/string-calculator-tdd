@@ -41,6 +41,13 @@ describe('testing string calculator',() => {
     })
 
 
+    it('add method should handle new line characters (\n) passed instead of commas (,)', () => {
+        expect(sum('5\n2,3')).toBe(10);
+    })
 
+    it('add method should add new delimiter (;) instead of comma if string starts with //; and result should be same',() => {
+        expect(sum('1,2,3')).toBe(6);
+        expect(sum('//;1;2;3')).toBe(6);
+    })
 
 });
