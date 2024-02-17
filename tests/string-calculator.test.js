@@ -8,6 +8,10 @@ describe('testing string calculator',() => {
         expect(sum('1,2')).toBe(3);
     });
 
+    it('add method should add n numbers', () => {
+        expect(sum('1,2,3')).toBe(6);
+    });
+
     it('add numbers even if the number string is empty', () => {
         expect(sum(',2,3')).toBe(5);
     })
