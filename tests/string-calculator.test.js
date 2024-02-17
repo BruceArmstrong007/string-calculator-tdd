@@ -50,4 +50,9 @@ describe('testing string calculator',() => {
         expect(sum('//;1;2;3')).toBe(6);
     })
 
+    it('add method should not add negative numbers and should return list of negative numbers as an error',()=>{
+        expect(sum('1,2,-3')).toBe(3);
+        
+    })
+
 });
