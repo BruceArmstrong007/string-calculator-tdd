@@ -18,12 +18,12 @@ function add(operands) {
 }
 
 function splitArr(operands) {
-    // if(operands.startsWith('//')) {
-        // operands = operands.replace('//','');
-    //     addArr = operands.split(operands.chatAt(2));
-    // } else {
+    if(operands.startsWith('//')) {
+        operands = operands.replace('//','');
+        addArr = operands.split(operands.chatAt(2));
+    } else {
     addArr = operands.split(',');
-    // } 
+    } 
     return addArr;
 }
 
