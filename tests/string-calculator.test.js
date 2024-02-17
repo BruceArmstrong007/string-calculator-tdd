@@ -12,4 +12,8 @@ describe('testing string calculator',() => {
         expect(sum(',2,3')).toBe(5);
     })
 
+    it('add method should handle new line characters (\n)', () => {
+        expect(sum('1,2\n,3')).toBe(6);
+    })
+
 });
