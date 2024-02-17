@@ -1,10 +1,12 @@
 function add(operands) {
     let result = 0;
+    let negative = [];
     let addArr = splitArr(operands);
-    
     addArr.forEach(element => {
-        if(Number(element)) {
-            result += Number(element);
+        const number = Number(element);
+        if(number) {
+            if(Math.sign(number) !== -1) result += number;
+            else negative.push(number);
         } else {
             if(element.search('\n')) {
                 let tempArr = element.replaceAll('\n', ',').split(',');
@@ -14,6 +16,11 @@ function add(operands) {
             }
         }
     });
+
+    // exception message for negative numbers
+    console.log('these negative numbers are not added \n', negative.join(','));
+
+
     return result;
 }
 
