@@ -19,8 +19,8 @@ function add(operands) {
 
 function splitArr(operands) {
     if(operands.startsWith('//')) {
-        operands = operands.replace('//','');
-        addArr = operands.split(operands.chatAt(2));
+        const splitChar = operands.charAt(2);
+        addArr = (operands.split('//'+splitChar)[1]).split(splitChar);
     } else {
     addArr = operands.split(',');
     } 
